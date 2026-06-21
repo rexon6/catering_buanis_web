@@ -5,15 +5,29 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        brand: {
+          maroon: "#7A1F1F",
+          cream: "#F8F1E7",
+          gold: "#C9A66B",
+          warmGray: "#FAFAFA",
+        },
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)'],
       },
     },
   },
   plugins: [],
 };
+
 export default config;
