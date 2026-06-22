@@ -1,6 +1,7 @@
+'use client';
 import { MapPin, Phone, AtSign } from 'lucide-react';
 import { useStore } from '@/store/useStore';
-import { translations } from '@/lib/data';
+import { translations } from '@/data';
 
 export default function Footer() {
     const language = useStore((state) => state.language);

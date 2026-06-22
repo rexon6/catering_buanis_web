@@ -2,7 +2,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Trash2, ShoppingBag } from 'lucide-react';
 import { useStore } from '@/store/useStore';
-import { formatRupiah, translations } from '@/lib/data';
+import { formatRupiah, translations } from '@/data';
 
 export default function CartDrawer() {
     const { isCartOpen, toggleCart, cart, removeFromCart, updateQuantity, language } = useStore();

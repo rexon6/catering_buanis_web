@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
 import { useStore } from '@/store/useStore';
-import { translations } from '@/lib/data';
+import { translations } from '@/data';
 
 const WA_NUMBER = '6285143252624';
 

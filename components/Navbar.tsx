@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { ShoppingBag, Menu, X, MessageCircle } from 'lucide-react';
 import { useStore } from '@/store/useStore';
-import { translations } from '@/lib/data';
+import { translations } from '@/data';
 
 export default function Navbar() {
     const { toggleCart, cart, language, setLanguage } = useStore();

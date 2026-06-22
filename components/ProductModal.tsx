@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Minus, Plus } from 'lucide-react';
 import { useStore } from '@/store/useStore';
-import { formatRupiah, translations } from '@/lib/data';
+import { formatRupiah, translations } from '@/data';
 
 export default function ProductModal() {
     const { selectedProduct, closeProductModal, addToCart, language } = useStore();

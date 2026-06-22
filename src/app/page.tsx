@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { products, categories, categoriesEn, formatRupiah, translations } from '@/lib/data';
+import { products, categories, categoriesEn, formatRupiah, translations } from '@/data';
 import { useStore } from '@/store/useStore';
 
 export default function Home() {
