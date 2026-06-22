@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="id" className="scroll-smooth">
       <body className={`${inter.variable} font-sans bg-brand-warmGray text-gray-800 antialiased`}>
         <Navbar />
-        <main className="min-h-screen pt-12">
+        <main className="min-h-screen pt-10">
           {children}
         </main>
         <Footer />

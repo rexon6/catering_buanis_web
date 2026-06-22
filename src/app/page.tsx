@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <section id="menu" className="max-w-7xl mx-auto px-4 py-6 md:py-10">
-        <div className="flex overflow-x-auto pb-4 mb-6 hide-scrollbar gap-2 sticky top-12 bg-brand-warmGray z-30 pt-4">
+        <div className="flex overflow-x-auto pb-4 mb-6 hide-scrollbar gap-2 sticky top-10 bg-brand-warmGray z-20 pt-4">
           {categories.map((cat) => (
             <button
               key={cat} onClick={() => setActiveCategory(cat)}
