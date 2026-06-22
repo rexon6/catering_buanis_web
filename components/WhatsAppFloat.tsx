@@ -1,15 +1,18 @@
 'use client';
 import { motion } from 'framer-motion';
+import { useStore } from '@/store/useStore';
+import { translations } from '@/lib/data';
 
 const WA_NUMBER = '6285143252624';
-const WA_MESSAGE = encodeURIComponent(
-    'Halo Nasi Catering Bu Anis, saya ingin bertanya tentang menu dan pemesanan catering. 😊'
-);
 
 export default function WhatsAppFloat() {
+    const language = useStore((state) => state.language);
+    const t = translations[language];
+    const encodedMessage = encodeURIComponent(t.waMessageIntro);
+
     return (
         <motion.a
-            href={`https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`}
+            href={`https://wa.me/${WA_NUMBER}?text=${encodedMessage}`}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat WhatsApp"
@@ -22,7 +25,7 @@ export default function WhatsAppFloat() {
         >
             {/* Tooltip */}
             <span className="hidden group-hover:flex items-center bg-white text-gray-800 text-sm font-semibold px-3 py-2 rounded-xl shadow-lg border border-gray-100 whitespace-nowrap transition-all duration-200">
-                💬 Tanya via WhatsApp
+                {t.tooltipWA}
             </span>
 
             {/* Button */}

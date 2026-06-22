@@ -1,1 +1,1 @@
-export { formatRupiah, categories, products } from '../data';
+export { formatRupiah, categories, categoriesEn, products, translations } from '../data';

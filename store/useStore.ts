@@ -3,10 +3,13 @@ import { create } from 'zustand';
 export interface Product {
     id: string;
     name: string;
+    nameEn: string;
     description: string;
+    descriptionEn: string;
     basePrice: number;
     image: string;
     category: string;
+    categoryEn: string;
 }
 
 export interface CartItem {
@@ -23,6 +26,7 @@ interface StoreState {
     cart: CartItem[];
     isCartOpen: boolean;
     selectedProduct: Product | null;
+    language: 'id' | 'en';
     addToCart: (item: CartItem) => void;
     removeFromCart: (id: string) => void;
     updateQuantity: (id: string, qty: number) => void;
@@ -30,12 +34,14 @@ interface StoreState {
     openProductModal: (product: Product) => void;
     closeProductModal: () => void;
     clearCart: () => void;
+    setLanguage: (lang: 'id' | 'en') => void;
 }
 
 export const useStore = create<StoreState>((set) => ({
     cart: [],
     isCartOpen: false,
     selectedProduct: null,
+    language: 'id',
     addToCart: (item) => set((state) => ({ cart: [...state.cart, item] })),
     removeFromCart: (id) => set((state) => ({
         cart: state.cart.filter((item) => item.id !== id)
@@ -48,5 +54,6 @@ export const useStore = create<StoreState>((set) => ({
     toggleCart: () => set((state) => ({ isCartOpen: !state.isCartOpen })),
     openProductModal: (product) => set({ selectedProduct: product }),
     closeProductModal: () => set({ selectedProduct: null }),
-    clearCart: () => set({ cart: [] })
+    clearCart: () => set({ cart: [] }),
+    setLanguage: (lang) => set({ language: lang })
 }));

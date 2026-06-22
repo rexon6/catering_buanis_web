@@ -2,11 +2,14 @@
 import { useState } from 'react';
 import { ShoppingBag, Menu, X, MessageCircle } from 'lucide-react';
 import { useStore } from '@/store/useStore';
+import { translations } from '@/lib/data';
 
 export default function Navbar() {
-    const { toggleCart, cart } = useStore();
+    const { toggleCart, cart, language, setLanguage } = useStore();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const cartCount = cart.reduce((acc: number, item) => acc + item.quantity, 0);
+
+    const t = translations[language];
 
     return (
         <>
@@ -22,9 +25,9 @@ export default function Navbar() {
                             {isMobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
                         </button>
                         <nav className="hidden md:flex items-center gap-5 font-semibold text-gray-600 text-sm">
-                            <a href="#" className="hover:text-brand-maroon transition-colors">Home</a>
-                            <a href="#menu" className="hover:text-brand-maroon transition-colors">Menu Catering</a>
-                            <a href="#menu" className="hover:text-brand-maroon transition-colors">Paket Acara</a>
+                            <a href="#" className="hover:text-brand-maroon transition-colors">{t.home}</a>
+                            <a href="#menu" className="hover:text-brand-maroon transition-colors">{t.menuCatering}</a>
+                            <a href="#menu" className="hover:text-brand-maroon transition-colors">{t.paketAcara}</a>
                         </nav>
                     </div>
 
@@ -39,16 +42,33 @@ export default function Navbar() {
                         </a>
                     </div>
 
-                    {/* Right: WhatsApp (Desktop) & Cart */}
+                    {/* Right: WhatsApp, Language, & Cart */}
                     <div className="flex items-center justify-end gap-1.5 md:gap-4">
                         <a 
-                            href="https://wa.me/6281234567890" 
+                            href="https://wa.me/6285143252624" 
                             target="_blank" 
                             className="hidden md:flex items-center gap-1.5 text-xs font-semibold text-green-700 bg-green-50 px-3 py-1.5 rounded-md hover:bg-green-100 transition-colors"
                         >
                             <MessageCircle size={13} />
-                            Tanya Admin
+                            {t.tanyaAdmin}
                         </a>
+
+                        {/* Language Selector */}
+                        <div className="flex items-center border border-gray-200 rounded-md p-0.5 bg-gray-50 text-[10px] sm:text-xs font-bold shrink-0">
+                            <button
+                                onClick={() => setLanguage('id')}
+                                className={`px-1.5 py-0.5 rounded transition-all duration-150 ${language === 'id' ? 'bg-brand-maroon text-white shadow-sm' : 'text-gray-500 hover:text-brand-maroon'}`}
+                            >
+                                ID
+                            </button>
+                            <button
+                                onClick={() => setLanguage('en')}
+                                className={`px-1.5 py-0.5 rounded transition-all duration-150 ${language === 'en' ? 'bg-brand-maroon text-white shadow-sm' : 'text-gray-500 hover:text-brand-maroon'}`}
+                            >
+                                EN
+                            </button>
+                        </div>
+
                         <button 
                             onClick={toggleCart} 
                             className="relative p-1 text-brand-maroon hover:bg-brand-cream rounded-full transition-colors"
@@ -73,30 +93,30 @@ export default function Navbar() {
                         onClick={() => setIsMobileMenuOpen(false)} 
                         className="hover:text-brand-maroon hover:bg-brand-cream px-3 py-1.5 text-sm rounded-md transition-all"
                     >
-                        Home
+                        {t.home}
                     </a>
                     <a 
                         href="#menu" 
                         onClick={() => setIsMobileMenuOpen(false)} 
                         className="hover:text-brand-maroon hover:bg-brand-cream px-3 py-1.5 text-sm rounded-md transition-all"
                     >
-                        Menu Catering
+                        {t.menuCatering}
                     </a>
                     <a 
                         href="#menu" 
                         onClick={() => setIsMobileMenuOpen(false)} 
                         className="hover:text-brand-maroon hover:bg-brand-cream px-3 py-1.5 text-sm rounded-md transition-all"
                     >
-                        Paket Acara
+                        {t.paketAcara}
                     </a>
                     <hr className="border-gray-100 my-1" />
                     <a 
-                        href="https://wa.me/6281234567890" 
+                        href="https://wa.me/6285143252624" 
                         target="_blank" 
                         className="flex items-center justify-center gap-2 text-xs font-semibold text-green-800 bg-green-50 px-3 py-2 rounded-lg hover:bg-green-100 transition-colors mb-1"
                     >
                         <MessageCircle size={13} />
-                        Tanya Admin via WhatsApp
+                        {t.tanyaAdminWA}
                     </a>
                 </div>
             )}

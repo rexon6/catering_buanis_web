@@ -1,6 +1,11 @@
 import { MapPin, Phone, AtSign } from 'lucide-react';
+import { useStore } from '@/store/useStore';
+import { translations } from '@/lib/data';
 
 export default function Footer() {
+    const language = useStore((state) => state.language);
+    const t = translations[language];
+
     return (
         <footer className="bg-white text-gray-600 py-12 mt-12 border-t border-gray-200">
             <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -11,11 +16,11 @@ export default function Footer() {
                         className="h-14 w-auto object-contain"
                     />
                     <p className="text-gray-500 text-sm leading-relaxed max-w-sm">
-                        Hadir menyajikan makanan otentik Nusantara untuk setiap momen berharga Anda. Bersih, halal, dan dimasak dengan cinta dari resep keluarga.
+                        {t.footerDesc}
                     </p>
                 </div>
                 <div className="space-y-4">
-                    <h4 className="text-lg font-bold text-brand-maroon mb-2">Hubungi Kami</h4>
+                    <h4 className="text-lg font-bold text-brand-maroon mb-2">{t.hubungiKami}</h4>
                     <div className="flex items-start gap-3 text-sm text-gray-600">
                         <MapPin size={18} className="shrink-0 mt-0.5 text-brand-gold" />
                         <a
@@ -33,8 +38,8 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className="space-y-4">
-                    <h4 className="text-lg font-bold text-brand-maroon mb-2">Jam Operasional</h4>
-                    <p className="text-sm text-gray-600">Senin - Sabtu: 07:00 - 17:00 WIB<br />Minggu & Libur Nasional: Sesuai Pesanan</p>
+                    <h4 className="text-lg font-bold text-brand-maroon mb-2">{t.jamOperasional}</h4>
+                    <p className="text-sm text-gray-600">{t.hariBuka}<br />{t.hariLibur}</p>
                     <div className="pt-2">
                         <a href="#" className="inline-flex items-center gap-2 text-gray-600 hover:text-brand-maroon transition-colors">
                             <AtSign size={20} className="text-brand-gold" />
