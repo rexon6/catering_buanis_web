@@ -14,7 +14,7 @@ export const products = [
         name: "Nasi Box Ayam Bakar",
         description: "Nasi putih legit dengan ayam bakar bumbu rujak, lalapan segar, tahu tempe, dan sambal terasi khas Bu Anis.",
         basePrice: 35000,
-        image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80&w=800",
+        image: "/images/nasi-box-ayam-bakar.jpg",
         category: "Nasi Kotak",
     },
     {

@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import CartDrawer from '@/components/CartDrawer'
 import ProductModal from '@/components/ProductModal'
+import WhatsAppFloat from '@/components/WhatsAppFloat'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -17,12 +18,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="id" className="scroll-smooth">
       <body className={`${inter.variable} font-sans bg-brand-warmGray text-gray-800 antialiased`}>
         <Navbar />
-        <main className="min-h-screen pt-16">
+        <main className="min-h-screen pt-12">
           {children}
         </main>
         <Footer />
         <CartDrawer />
         <ProductModal />
+        <WhatsAppFloat />
       </body>
     </html>
   )

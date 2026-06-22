@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 150" width="100%" height="100%">
+  <defs>
+    <!-- Import beautiful cursive Google Fonts -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap');
+      
+      .text-catering {
+        font-family: 'Pacifico', cursive;
+        font-size: 64px;
+        font-weight: 400;
+      }
+      
+      .text-buanis {
+        font-family: 'Pacifico', cursive;
+        font-size: 56px;
+        font-weight: 400;
+      }
+
+      .outline-maroon {
+        stroke: #7A1F1F;
+        stroke-width: 12px;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+        paint-order: stroke fill;
+      }
+
+      .fill-white {
+        fill: #FFFFFF;
+      }
+
+      .fill-gold {
+        fill: #C9A66B; /* Brand Gold */
+      }
+    </style>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#501010" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Centered/Staggered Text Layout -->
+  <g filter="url(#shadow)" transform="translate(32, 5)">
+    <!-- "Catering" Background Outline -->
+    <text x="10" y="75" class="text-catering outline-maroon fill-white">Catering</text>
+    <!-- "Catering" Foreground Text -->
+    <text x="10" y="75" class="text-catering fill-white">Catering</text>
+    
+    <!-- "Bu Anis" Background Outline -->
+    <text x="85" y="130" class="text-buanis outline-maroon fill-gold">Bu Anis</text>
+    <!-- "Bu Anis" Foreground Text -->
+    <text x="85" y="130" class="text-buanis fill-gold">Bu Anis</text>
+  </g>
+</svg>

@@ -18,7 +18,7 @@ export default function CartDrawer() {
         message += `*Total Pesanan: ${formatRupiah(subtotal)}*\n\nMohon info ongkos kirim dan cara pembayarannya ya. Terima kasih!`;
 
         const encodedMessage = encodeURIComponent(message);
-        window.open(`https://wa.me/6281234567890?text=${encodedMessage}`, '_blank');
+        window.open(`https://wa.me/6285143252624?text=${encodedMessage}`, '_blank');
     };
 
     return (
@@ -44,7 +44,7 @@ export default function CartDrawer() {
                                         <div className="flex-grow flex flex-col justify-between">
                                             <div>
                                                 <h4 className="font-bold text-gray-800 text-sm leading-tight">{item.product.name}</h4>
-                                                {item.options.notes && <p className="text-xs text-gray-500 mt-1 line-clamp-1 border-l-2 border-brand-gold pl-1">"{item.options.notes}"</p>}
+                                                {item.options.notes && <p className="text-xs text-gray-500 mt-1 line-clamp-1 border-l-2 border-brand-gold pl-1">&quot;{item.options.notes}&quot;</p>}
                                                 <p className="text-brand-maroon font-semibold text-sm mt-1">{formatRupiah(item.totalPrice)}</p>
                                             </div>
                                             <div className="flex items-center justify-between mt-2">

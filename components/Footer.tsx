@@ -14,11 +14,18 @@ export default function Footer() {
                     <h4 className="text-lg font-bold text-brand-gold mb-2">Hubungi Kami</h4>
                     <div className="flex items-start gap-3 text-sm text-brand-cream/90">
                         <MapPin size={18} className="shrink-0 mt-0.5 text-brand-gold" />
-                        <p>Jl. Raya Kuliner Nusantara No. 88, <br />Jakarta Selatan, DKI Jakarta 12345</p>
+                        <a
+                            href="https://www.google.com/maps/dir/?api=1&destination=Jln+Raya+Ngawen+RT+04+RW+01+Wedung+Demak"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-white hover:underline transition-colors"
+                        >
+                            Jln Raya Ngawen RT 04 RW 01,<br />Wedung, Demak, Jawa Tengah
+                        </a>
                     </div>
                     <div className="flex items-center gap-3 text-sm text-brand-cream/90">
                         <Phone size={18} className="text-brand-gold" />
-                        <p>+62 812 3456 7890</p>
+                        <a href="https://wa.me/6285143252624" target="_blank" rel="noopener noreferrer" className="hover:text-white hover:underline transition-colors">+62 851-4325-2624</a>
                     </div>
                 </div>
                 <div className="space-y-4">
